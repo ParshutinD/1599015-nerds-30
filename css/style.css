@@ -30,7 +30,7 @@
   --basic-dark-green: #00bc6c;
   --basic-light-dark-green: #00aa62;
   --basic-yellow: #efc84a;
-  --basic-ligth-dark-yellow: #eab534;
+  --basic-light-dark-yellow: #eab534;
   --basic-dark-yellow: #e5a722;
   --basic-light: #eeeeee;
   --basic-white: #ffffff;
@@ -47,6 +47,7 @@
   --color-toggle: #ababab;
   --color-toggle-shadow: #d9d9d9;
   --border-button-color: #dbdbdb;
+  --basic-info-text: #666666;
 }
 
 /* Reset styles */
@@ -238,7 +239,7 @@ img {
   background-color: var(--basic-yellow);
 }
 .button.yellow:hover {
-  background-color: var(--basic-ligth-dark-yellow);
+  background-color: var(--basic-light-dark-yellow);
 }
 .button.yellow:active {
   background-color: var(--basic-dark-yellow);
@@ -662,15 +663,16 @@ img {
   font-weight: normal;
   font-size: 16px;
   line-height: 19px;
-  padding-bottom: 1px;
+  padding-bottom: 4px;
 }
 .filter-item legend {
   text-transform: uppercase;
-  margin-bottom: 15px;
-  padding-top: 6px;
+  margin-bottom: 10px;
+  padding-top: 7px;
 }
+
 .filter-list li {
-  margin-bottom: 20px;
+  margin-bottom: 21px;
   padding-left: 0;
 }
 .filter-list li:last-of-type {
@@ -686,11 +688,23 @@ img {
 .from-number,
 .get-number {
   border: none;
+  text-align: center;
 }
+.from-number::-webkit-outer-spin-button,
+.get-number::-webkit-outer-spin-button,
+.from-number::-webkit-inner-spin-button,
+.get-number::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.from-number,
+.get-number {
+  -moz-appearance: textfield;
+}
+
 .filter-button {
   width: 260px;
   height: 50px;
-  margin-top: 20px;
+  margin-top: 11px;
 }
 
 .form-wrapper legend {
@@ -1067,7 +1081,10 @@ img {
   margin-top: 9px;
 }
 .catalog-item-info p {
-  line-height: 20px;
+  line-height: 18px;
+  color: var(--basic-info-text);
+  font-weight: 400;
+  font-size: 16px;
 }
 .catalog-item::after {
   content: "";
@@ -1134,7 +1151,7 @@ img {
 }
 .filter-range legend {
   text-transform: uppercase;
-  margin-bottom: 48px;
+  margin-bottom: 42px;
 }
 .catalog-filter-button {
   background: none;
@@ -1146,10 +1163,14 @@ img {
   font-family: "Roboto", "Tahoma", sans-serif;
   font-weight: 400;
 }
-
+.no-active-button {
+  color: var(--basic-grey);
+}
 .catalog-filter h3 {
+  font-size: 18px;
   text-transform: uppercase;
   font-weight: 700;
+  padding-top: 2px;
 }
 .filter-range label {
   text-transform: uppercase;
@@ -1166,7 +1187,7 @@ img {
   background: var(--basic-light);
   border-radius: 3px;
   position: relative;
-  margin-bottom: 7px;
+  margin-bottom: 15px;
 }
 
 .range-controls .scale {
@@ -1242,6 +1263,9 @@ img {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   padding-top: 5px;
+}
+.catalog-filter-list {
+  margin-left: 30px;
 }
 .catalog-filter-item:hover {
   opacity: 0.6;

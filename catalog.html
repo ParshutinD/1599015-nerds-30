@@ -55,12 +55,13 @@
                     ></div>
                   </div>
                 </div>
-                <input hidden id="min-price" type="range" min="0" max="15000" />
+                <label class="visually-hidden" for="price-range">Полоса прокрутки</label>
+                <input hidden id="price-range" type="range" min="0" max="15000" />
                 <label class="price" for="min-price">от</label>
                 <input
                   class="from-number"
                   type="number"
-                  id="price"
+                  id="min-price"
                   name="price"
                   value="0"
                   min="0"
@@ -110,7 +111,7 @@
                 </ul>
               </fieldset>
               <fieldset class="filter-item form-wrapper">
-                <legend>Особенности:</legend>
+                <legend class="features-title">Особенности:</legend>
                 <ul class="filter-list">
                   <li>
                     <input
@@ -195,7 +196,7 @@
                 <li class="catalog-filter-item">
                   <button
                     aria-label="Сортировать по увеличению цены"
-                    class="catalog-filter-button"
+                    class="catalog-filter-button no-active-button"
                   >
                     ▲
                   </button>
@@ -336,16 +337,18 @@
           height="190"
           alt="mark"
         />
-        <div class="footer-contacts">
-          <h3>NЁRDS DESIGN STUDIO</h3>
-          <p>
-            191186, Санкт-Петербург,<br />
-            ул. Б. Конюшенная, д. 19/8 <br />
-          </p>
-          <a class="footer-phone" href="tel:+78122757575">
-            тел. +7 (812) 275-75-75</a
+        <div class="container">
+          <div class="footer-contacts">
+            <h3>NЁRDS DESIGN STUDIO</h3>
+            <p>
+              191186, Санкт-Петербург,<br />
+              ул. Б. Конюшенная, д. 19/8 <br />
+            </p>
+            <a class="footer-phone" href="tel:+78122757575">
+              тел. +7 (812) 275-75-75</a
             >
-          <a class="button openbutton" href="whireUs.html">Напишите нам</a>
+            <a class="button openbutton" href="whireUs.html">Напишите нам</a>
+          </div>
         </div>
       </div>
       <div class="container">
@@ -400,7 +403,6 @@
           <div>
             <label for="name">Ваше имя:</label>
             <input
-              required
               class="feedback-name"
               id="name"
               type="text"
@@ -411,7 +413,6 @@
           <div>
             <label for="email">Ваш email:</label>
             <input
-              required
               class="feedback-email"
               id="email"
               type="email"
@@ -423,7 +424,6 @@
         <fieldset class="feedback-form-message form-wrapper">
           <label for="text">Текст письма:</label>
           <textarea
-            required
             class="feedback-text"
             id="text"
             name="message"
