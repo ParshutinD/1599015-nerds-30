@@ -1,28 +1,32 @@
 const closeButton = document.querySelector(".popup-close");
 const openButton = document.querySelector(".openbutton");
 const popup = document.querySelector(".popup");
-const sendForm = document.querySelector(".sendform");
+const form = document.querySelector(".feedback-form");
 const inputEmail = document.querySelector(".feedback-email");
 const inputName = document.querySelector(".feedback-name");
 const inputMessage = document.querySelector(".feedback-text");
 
 // open form
-openButton.onclick = function (evt) {
+openButton.addEventListener("click", function (evt) {
   evt.preventDefault();
   popup.classList.remove("popup-hidden");
-};
-closeButton.onclick = function () {
-  popup.classList.add("popup-hidden");
-};
+});
 
-// send form
-sendForm.onclick = function () {
+closeButton.addEventListener("click", function () {
+  popup.classList.add("popup-hidden");
+  popup.classList.remove("popup-shake");
+  form.classList.remove("form-error");
+});
+
+form.addEventListener("submit", function (e) {
   if (!inputEmail.value || !inputName.value || !inputMessage.value) {
+    e.preventDefault();
     popup.classList.remove("popup-shake");
     popup.offsetWidth = popup.offsetWidth;
     popup.classList.add("popup-shake");
+    form.classList.add("form-error");
   }
-};
+});
 
 //Слайд шоу
 
